@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Picker</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+        body {
+            font-family: 'Fredoka One', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #ff6f61;
+        }
+        .section {
+            margin-top: 30px;
+        }
+        .option {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            background-color: #fafafa;
+        }
+        .option h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        .option p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .select-button {
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .select-button:hover {
+            background-color: #e65b50;
+        }
+        .confirm-button {
+            display: block;
+            width: 100%;
+            margin-top: 30px;
+            padding: 15px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .confirm-button:hover {
+            background-color: #e65b50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pick Your Date Night!</h1>
+
+        <div class="section" id="restaurants">
+            <h2>Choose a Restaurant</h2>
+            <div class="option">
+                <h3>Bixi Harlem</h3>
+                <p>Asian-Fusion · $$ · 4.5 (122 reviews)</p>
+                <p>2168 Frederick Douglass Blvd, New York, NY 10026</p>
+                <p>A trendy spot in Harlem offering Asian-inspired fusion cuisine with bold flavors and creative dishes. Known for its lively atmosphere and unique takes on classics like Korean BBQ sliders and Thai shrimp dumplings, it's a local favorite for a casual yet refined dining experience.</p>
+                <a href="https://bixiharlem.com/new-york-city-bixi-food-menu" target="_blank">View Menu</a>
+                <a href="https://goo.gl/maps/PH5kVHzvKJ62" target="_blank">View on Map</a>
+                <button class="select-button" onclick="selectRestaurant('Bixi Harlem')">Select</button>
+            </div>
+            <div class="option">
+                <h3>Cha Cha Tang</h3>
+                <p>Cantonese · $$ · 4.0 (65 reviews)</p>
+                <p>257 Sixth Avenue, New York, NY 10014</p>
+                <p>A downtown Chinese restaurant by Wilson Tang and John McDonald, offering a playful rendition of classic Hong Kong diner cuisine, including dim sum, noodles, and their signature Roasted Cantonese Duck.</p>
+                <a href="https://www.chachatang.com/restaurantweek" target="_blank">View Menu</a>
+                <a href="https://goo.gl/maps/" target="_blank">View on Map</a>
+                <button class="select-button" onclick="selectRestaurant('Cha Cha Tang')">Select</button>
+            </div>
+            <div class="option">
+                <h3>Dagon</h3>
+                <p>Middle Eastern · $$ · 4.5 (41 reviews)</p>
+                <p>2454 Broadway, New York, NY 10024</p>
+                <p>A restaurant serving Middle Eastern cuisine with a focus on Israeli flavors, offering dishes like hummus, flash-fried cauliflower, and chicken schnitzel in a warm and inviting atmosphere.</p>
+                <a href="https://www.dagonnyc.com/menus/#restaurant-week-dinner" target="_blank">View Menu</a>
+                <a href="https://goo.gl/maps/" target="_blank">View on Map</a>
+                <button class="select-button" onclick="selectRestaurant('Dagon')">Select</button>
+            </div>
+            <div class="option">
+                <h3>Panda Harlem</h3>
+                <p>Chinese-Asian Fusion · $$ · 4.2 (87 reviews)</p>
+                <p>2331 12th Ave (133rd Street And 12th Avenue), New York, NY 10027</p>
+                <p>A Chinese-Asian fusion restaurant providing a unique dining experience inspired by fine cuisine, high-energy hospitality, and hip-hop culture, featuring dishes like Beijing Chicken and Black Pepper Beef.</p>
+                <a href="https://www.pandaharlem.com/menu" target="_blank">View Menu</a>
+                <a href="https://goo.gl/maps/" target="_blank">View on Map</a>
+                <button class="select-button" onclick="selectRestaurant('Panda Harlem')">Select</button>
+            </div>
+            <div class="option">
+                <h3>Kashkaval Garden</h3>
+                <p>Mediterranean · $$ · 4.5 (595 reviews)</p>
+                <p>852 9th Ave (btwn W 55th & W 56th St), New York, NY 10019</p>
+                <p>A Mediterranean-inspired eatery in Hell's Kitchen since 1997, offering tapas, grilled skewers, fondues, salads, and a curated wine list in a casual, relaxed environment.</p>
+                <a href="https://kashkaval.s3.amazonaws.com/Restaurant+Week+Menus+2021.pdf" target="_blank">View Menu</a>
+                <a href="https://goo.gl/maps/" target="_blank">View on Map</a>
+                <button class="select-button" onclick="selectRestaurant('Kashkaval Garden')">Select</button>
+            </div>
+        </div>
+
+        <div class="section" id="activities">
+            <h2>Choose an Activity</h2>
+            <div class="option">
+                <h3>Slime Creation</h3>
+                <p>Crafts & Fun · Private</p>
+                <p>60 Haven Ave, Apt 18D, New York, NY</p>
+                <p>Get your hands sticky and creative with tons of glue, magical liquid, and endless possibilities! Create your own slime masterpiece in this cozy and fun-filled environment.</p>
+                <a href="https://goo.gl/maps/" target="_blank">View on Map</a>
+                <button class="select-button" onclick="selectActivity('Slime Creation')">Select</button>
+            </div>
+            <div class="option">
+                <h3>Sloomoo Institute</h3>
+                <p>Slime Experience · $$ · 4.8 (500+ reviews)</p>
+                <p>475 Broadway, New York, NY 10013</p>
+                <p>Dive into the world of slime with sensory experiences, DIY slime-making, and interactive exhibits. A playful, hands-on activity that promises to bring out your inner child!</p>
+                <a href="https://goo.gl/maps/" target="_blank">View on Map</a>
+                <button class="select-button" onclick="selectActivity('Sloomoo Institute')">Select</button>
+            </div>
+            <div class="option">
+                <h3>Museum of the Moving Image</h3>
+                <p>Art & Cinema · $$ · 4.6 (4,300+ reviews)</p>
+                <p>36-01 35th Ave, Queens, NY 11106</p>
+                <p>Explore the fascinating world of film, television, and digital media through interactive exhibits, screenings, and behind-the-scenes showcases of how your favorite movies come to life.</p>
+                <a href="https://goo.gl/maps/" target="_blank">View on Map</a>
+                <button class="select-button" onclick="selectActivity('Museum of the Moving Image')">Select</button>
+            </div>
+            <div class="option">
+                <h3>Groupmuse: Winter Jazz at Ordinary Mind Zendo</h3>
+                <p>Live Music · $ · Unique Venue</p>
+                <p>107 West 78th Street, New York, NY 10024</p>
+                <p>Immerse yourself in a cozy and intimate jazz performance in the peaceful setting of Ordinary Mind Zendo. Perfect for a quiet yet captivating evening of music.</p>
+                <a href="https://goo.gl/maps/" target="_blank">View on Map</a>
+                <button class="select-button" onclick="selectActivity('Groupmuse: Winter Jazz')">Select</button>
+            </div>
+            <div class="option">
+                <h3>Lincoln Center Presents: Night Side Songs</h3>
+                <p>Performing Arts · $$ · Iconic Venue</p>
+                <p>10 Lincoln Center Plaza, New York, NY 10023</p>
+                <p>Enjoy a night of enchanting music and storytelling at one of New York’s most prestigious venues. This performance delves into themes of medicine and healing, blending music and narratives that explore the human condition and the resilience of the spirit.</p></p>
+                <a href="https://goo.gl/maps/" target="_blank">View on Map</a>
+                <button class="select-button" onclick="selectActivity('Night Side Songs')">Select</button>
+            </div>
+        </div>
+
+        <button class="confirm-button" onclick="confirmSelection()">Confirm Choices</button>
+    </div>
+
+    <script>
+        let selectedRestaurant = '';
+        let selectedActivity = '';
+
+        function selectRestaurant(name) {
+            selectedRestaurant = name;
+            alert(`You selected: ${name}`);
+        }
+
+        function selectActivity(name) {
+            selectedActivity = name;
+            alert(`You selected: ${name}`);
+        }
+
+        function confirmSelection() {
+            if (selectedRestaurant && selectedActivity) {
+                alert(`Your date night is set!\nRestaurant: ${selectedRestaurant}\nActivity: ${selectedActivity}`);
+            } else {
+                alert('Please select both a restaurant and an activity!');
+            }
+        }
+    </script>
+</body>
+</html>
